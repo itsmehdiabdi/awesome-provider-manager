@@ -1,0 +1,5 @@
+- [x] method-based providers
+    - can be handled with some flags in provider object (defined in config)
+- [x] how to handle queue
+    - connector layer
+- [ ] config manager
