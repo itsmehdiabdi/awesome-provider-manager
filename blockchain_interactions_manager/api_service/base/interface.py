@@ -5,16 +5,18 @@ class APIService(ABC):
     """
     Description
     ----------
-    A provider handles an api for a specific network. e.g. EthWeb3Provider handles web3 ethereum apis.
+    An api_service handles an api for a specific network. e.g. EthWeb3APIService handles web3 ethereum apis.
 
     Attributes
     ----------
     rpc_provider : str
-        the url of the api that a provider handles
+        the url of the api that an api_service handles
 
     Methods
     -------
     get_balance(wallet_address: str):
+        it's a wrapper on requesting to the api.
+
         returns wallet_address's native balance.
     """
 
@@ -24,6 +26,7 @@ class APIService(ABC):
     def get_balance(self, wallet_address: str) -> int:
         pass
 
+# TODO:
 # add some flags like:
 #   privacy issue
 #   free

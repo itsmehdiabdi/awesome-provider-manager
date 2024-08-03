@@ -2,7 +2,7 @@ from typing import List
 
 from ..handler import HandlerInterface
 from ..api_service import APIService
-from ..strategies import strategies, StrategyType
+from ..strategy import strategies, StrategyType
 
 
 class Handler(HandlerInterface):

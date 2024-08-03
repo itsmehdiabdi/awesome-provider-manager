@@ -3,7 +3,7 @@ from typing import Dict
 
 from ...handler import HandlerInterface
 from ...api_service import Network
-from ...strategies import StrategyType
+from ...strategy import StrategyType
 from ...utils import Singleton
 
 
@@ -13,6 +13,7 @@ class Worker(metaclass=Singleton):
     ----------
     A worker knows handlers of all networks. (note that each network has just one handler)
     it resolves network and uses proper handler.
+    technically it's a handler-hub.
 
     Attributes
     ----------
@@ -21,7 +22,9 @@ class Worker(metaclass=Singleton):
 
     Methods
     -------
-    get_balance(network: Network, strategy: Strategy, wallet_address: str):
+    get_balance(network: Network, strategy: StrategyType, wallet_address: str):
+        selects proper handler and runs its get_balance function.
+
         returns wallet_address's native balance.
     """
 

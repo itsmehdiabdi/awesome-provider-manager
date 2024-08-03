@@ -1,6 +1,8 @@
 from typing import Dict, List
 
-from ...api_service import Network, ProviderConfig
+from ...api_service import Network, APIServiceConfig
 
-
-Config = Dict[Network, List[ProviderConfig]]
+"""
+    maps each network to its api_services' configs.
+"""
+Config = Dict[Network, List[APIServiceConfig]]

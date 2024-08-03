@@ -1,6 +1,6 @@
 from ..connector import ConnectorInterface
 from ..api_service import Network
-from ..strategies import StrategyType
+from ..strategy import StrategyType
 from ..worker import Worker
 
 

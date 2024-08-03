@@ -2,7 +2,7 @@ from typing import Dict
 
 from .arb import arb_api_services
 from .base.interface import APIService
-from .base.type import Config as ProviderConfig, Network
+from .base.type import Config as APIServiceConfig, Network
 from .eth import eth_api_services
 
 api_services: Dict[Network, APIService] = {
@@ -10,4 +10,4 @@ api_services: Dict[Network, APIService] = {
     "arb": arb_api_services,
 }
 
-__all__ = ["APIService", "ProviderConfig", "api_services"]
+__all__ = ["APIService", "APIServiceConfig", "api_services"]

@@ -18,11 +18,13 @@ class Manager(ABC):
     connectors: Connectors
         maps each connector name to its object
     config : Config
-        it maps requirement to connection type and strategy.
+        it maps requirement to connection name and strategy.
 
     Methods
     -------
     get_balance(requirement: Requirement, wallet_address: str) -> int:
+        translates requirement and calls the related connector's get_balance function.
+
         returns wallet_address's native balance.
     """
 

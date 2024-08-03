@@ -3,7 +3,7 @@ import json
 
 from ..handler import Handler, HandlerInterface
 from ..api_service import Network, api_services
-from ..strategies import StrategyType
+from ..strategy import StrategyType
 from ..worker import WorkerConfig, WorkerInterface
 
 

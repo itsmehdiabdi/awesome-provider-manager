@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 from ..base.type import Connection
 from ...api_service import Network
-from ...strategies import StrategyInterface
+from ...strategy import StrategyType
 from ...utils import Singleton
 
 
@@ -10,7 +10,7 @@ class Connector(metaclass=Singleton):
     """
     Description
     ----------
-    A Connector abstracts the connection with worker. so manager doesn't know anything about connection type.
+    A Connector abstracts the connection to the workers. so manager doesn't know anything about connection type.
     we may connect to worker with a queue, http request, direct function call to local worker, ... .
 
     Attributes
@@ -21,8 +21,10 @@ class Connector(metaclass=Singleton):
     Methods
     -------
     def get_balance(
-        self, network: Network, strategy: StrategyInterface, wallet_address: str
+        self, network: Network, strategy: StrategyType, wallet_address: str
     ) -> int:
+        connects to worker.
+
         returns wallet_address's native balance.
     """
 
@@ -30,6 +32,6 @@ class Connector(metaclass=Singleton):
 
     @abstractmethod
     def get_balance(
-        self, network: Network, strategy: StrategyInterface, wallet_address: str
+        self, network: Network, strategy: StrategyType, wallet_address: str
     ) -> int:
         pass
