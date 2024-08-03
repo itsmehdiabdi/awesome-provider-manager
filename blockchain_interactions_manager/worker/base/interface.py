@@ -1,10 +1,10 @@
 from abc import abstractmethod
 from typing import Dict
 
-from blockchain_interactions_manager.handler import Handler
-from blockchain_interactions_manager.types.network import Network
-from blockchain_interactions_manager.types.strategy import Strategy
-from blockchain_interactions_manager.utils import Singleton
+from ...handler import HandlerInterface
+from ...providers import Network
+from ...strategies import StrategyType
+from ...utils import Singleton
 
 
 class Worker(metaclass=Singleton):
@@ -25,10 +25,10 @@ class Worker(metaclass=Singleton):
         returns wallet_address's native balance.
     """
 
-    handlers: Dict[Network, Handler]
+    handlers: Dict[Network, HandlerInterface]
 
     @abstractmethod
     def get_balance(
-        self, network: Network, strategy: Strategy, wallet_address: str
+        self, network: Network, strategy: StrategyType, wallet_address: str
     ) -> int:
         pass

@@ -1,9 +1,9 @@
 from abc import abstractmethod
 
-from blockchain_interactions_manager.types.strategy import Strategy
-from blockchain_interactions_manager.types.network import Network
-from blockchain_interactions_manager.types.connection import Connection
-from blockchain_interactions_manager.utils import Singleton
+from ..base.type import Connection
+from ...providers import Network
+from ...strategies import StrategyInterface
+from ...utils import Singleton
 
 
 class Connector(metaclass=Singleton):
@@ -21,7 +21,7 @@ class Connector(metaclass=Singleton):
     Methods
     -------
     def get_balance(
-        self, network: Network, strategy: Strategy, wallet_address: str
+        self, network: Network, strategy: StrategyInterface, wallet_address: str
     ) -> int:
         returns wallet_address's native balance.
     """
@@ -30,6 +30,6 @@ class Connector(metaclass=Singleton):
 
     @abstractmethod
     def get_balance(
-        self, network: Network, strategy: Strategy, wallet_address: str
+        self, network: Network, strategy: StrategyInterface, wallet_address: str
     ) -> int:
         pass

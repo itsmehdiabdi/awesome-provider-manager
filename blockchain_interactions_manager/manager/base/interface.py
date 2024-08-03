@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
 
-from blockchain_interactions_manager.types.network import Network
-from blockchain_interactions_manager.types.requirement import Requirement
-from blockchain_interactions_manager.types.manager import Config
-from blockchain_interactions_manager.types.manager import Connectors
+from .type import Requirement, ManagerConfig, Connectors
+from ...providers import Network
 
 
 class Manager(ABC):
@@ -30,7 +28,7 @@ class Manager(ABC):
 
     network: Network
     connectors: Connectors
-    config: Config
+    config: ManagerConfig
 
     @abstractmethod
     def get_balance(self, requirement: Requirement, wallet_address: str) -> int:

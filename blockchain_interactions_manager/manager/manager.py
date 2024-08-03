@@ -1,9 +1,6 @@
-from blockchain_interactions_manager.interfaces.manager import (
-    Manager as ManagerInterface,
-)
-from blockchain_interactions_manager.types.network import Network
-from blockchain_interactions_manager.types.manager import Config, Connectors
-from blockchain_interactions_manager.types.requirement import Requirement
+from .base.interface import Manager as ManagerInterface
+from .base.type import Connectors, ManagerConfig, Requirement
+from ..providers import Network
 
 
 class Manager(ManagerInterface):
@@ -11,7 +8,7 @@ class Manager(ManagerInterface):
         self,
         network: Network,
         connectors: Connectors,
-        config: Config,
+        config: ManagerConfig,
     ) -> None:
         self.network = network
         self.connectors = connectors

@@ -1,3 +1,4 @@
-from blockchain_interactions_manager.handler.handler import Handler
+from .base.interface import Handler as HandlerInterface
+from .handler import Handler
 
-__all__ = ["Handler"]
+__all__ = ["HandlerInterface", "Handler"]

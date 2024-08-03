@@ -1,17 +1,15 @@
-from blockchain_interactions_manager.interfaces import Connector
-from blockchain_interactions_manager.worker.worker import Worker
-from blockchain_interactions_manager.types import (
-    TypeStrategy,
-    TypeNetwork,
-)
+from ..connectors import ConnectorInterface
+from ..providers import Network
+from ..strategies import StrategyType
+from ..worker import Worker
 
 
-class LocalConnector(Connector):
+class LocalConnector(ConnectorInterface):
     def __init__(self) -> None:
         self.worker = Worker()
         self.connection = "local"
 
     def get_balance(
-        self, network: TypeNetwork, strategy: TypeStrategy, wallet_address: str
+        self, network: Network, strategy: StrategyType, wallet_address: str
     ) -> int:
         return self.worker.get_balance(network, strategy, wallet_address)

@@ -1,15 +1,16 @@
 from blockchain_interactions_manager import (
-    types,
-    interfaces,
-    connectors,
+    LocalConnector,
+    ConnectorsType,
+    ManagerInterface,
+    ManagerConfig,
     Manager,
 )
 
-connectors_dict: types.TypeManagerConnectors = {"local1": connectors.LocalConnector()}
-config: types.TypeManagerConfig = {
+connectors_dict: ConnectorsType = {"local1": LocalConnector()}
+config: ManagerConfig = {
     "fastest": {"connector_name": "local1", "strategy": "fail_over"}
 }
-manager: interfaces.Manager = Manager("eth", connectors_dict, config)
+manager: ManagerInterface = Manager("eth", connectors_dict, config)
 
 
 balance: int = manager.get_balance(

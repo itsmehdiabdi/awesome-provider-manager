@@ -1,6 +1,6 @@
 from web3 import Web3
 
-from blockchain_interactions_manager.interfaces import Provider
+from ..base.interface import Provider
 
 
 class Web3Provider(Provider):

@@ -1,6 +1,6 @@
 from typing import TypeVar
 
-from blockchain_interactions_manager.interfaces.strategy import Strategy
+from ..base.interface import Strategy
 
 T = TypeVar("T")
 

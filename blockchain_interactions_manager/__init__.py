@@ -1,7 +1,13 @@
-from blockchain_interactions_manager.manager.manager import Manager
-from blockchain_interactions_manager import connectors
-from blockchain_interactions_manager.worker import Worker
-from blockchain_interactions_manager import interfaces
-from blockchain_interactions_manager import types
+from .manager import ConnectorsType, Manager, ManagerInterface, ManagerConfig
+from .worker import Worker
+from .connectors import ConnectorInterface, LocalConnector
 
-__all__ = ["Manager", "connectors", "Worker", "interfaces", "types"]
+__all__ = [
+    "ConnectorsType",
+    "Manager",
+    "ManagerInterface",
+    "ManagerConfig",
+    "Worker",
+    "ConnectorInterface",
+    "LocalConnector",
+]

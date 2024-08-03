@@ -1,18 +1,15 @@
 from typing import List
 
-from blockchain_interactions_manager.interfaces import (
-    Provider,
-    Handler as HandlerInterface,
-)
-from blockchain_interactions_manager.strategies import strategies
-from blockchain_interactions_manager.types.strategy import Strategy
+from ..handler import HandlerInterface
+from ..providers import ProviderInterface
+from ..strategies import strategies, StrategyType
 
 
 class Handler(HandlerInterface):
-    def __init__(self, providers: List[Provider]) -> None:
+    def __init__(self, providers: List[ProviderInterface]) -> None:
         self.providers = providers
 
-    def get_balance(self, strategy: Strategy, wallet_address: str) -> int:
+    def get_balance(self, strategy: StrategyType, wallet_address: str) -> int:
         response = strategies.get(strategy)[int]().run(
             [provider.get_balance for provider in self.providers], wallet_address
         )

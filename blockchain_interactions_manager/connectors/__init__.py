@@ -1,3 +1,4 @@
-from blockchain_interactions_manager.connectors.local_connector import LocalConnector
+from .base.interface import Connector as ConnectorInterface
+from .local_connector import LocalConnector
 
-__all__ = ["LocalConnector"]
+__all__ = ["ConnectorInterface", "LocalConnector"]
