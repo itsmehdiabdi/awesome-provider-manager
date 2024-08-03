@@ -1,6 +1,6 @@
 from typing import Dict, Literal, TypedDict
 
-from ...connectors import ConnectorInterface
+from ...connector import ConnectorInterface
 from ...strategies import StrategyType
 
 Connectors = Dict[str, ConnectorInterface]

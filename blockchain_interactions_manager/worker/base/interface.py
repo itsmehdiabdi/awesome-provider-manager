@@ -2,7 +2,7 @@ from abc import abstractmethod
 from typing import Dict
 
 from ...handler import HandlerInterface
-from ...providers import Network
+from ...api_service import Network
 from ...strategies import StrategyType
 from ...utils import Singleton
 

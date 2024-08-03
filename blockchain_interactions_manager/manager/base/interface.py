@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 from .type import Requirement, ManagerConfig, Connectors
-from ...providers import Network
+from ...api_service import Network
 
 
 class Manager(ABC):

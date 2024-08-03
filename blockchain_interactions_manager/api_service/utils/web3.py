@@ -1,9 +1,9 @@
 from web3 import Web3
 
-from ..base.interface import Provider
+from ..base.interface import APIService
 
 
-class Web3Provider(Provider):
+class Web3APIService(APIService):
     def __init__(self, rpc_provider) -> None:
         self.rpc_provider = rpc_provider
         self.w3 = Web3(Web3.HTTPProvider(rpc_provider))

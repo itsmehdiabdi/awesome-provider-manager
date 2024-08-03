@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from ...providers import ProviderInterface
+from ...api_service import APIService
 from ...strategies import StrategyInterface
 
 
@@ -15,7 +15,7 @@ class Handler(ABC):
 
     Attributes
     ----------
-    providers: List[ProviderInterface]
+    providers: List[APIService]
         all providers of a network.
 
     Methods
@@ -24,7 +24,7 @@ class Handler(ABC):
         returns wallet_address's native balance.
     """
 
-    providers: List[ProviderInterface]
+    providers: List[APIService]
 
     @abstractmethod
     def get_balance(self, strategy: StrategyInterface, wallet_address: str) -> int:

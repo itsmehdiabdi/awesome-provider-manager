@@ -1,6 +1,6 @@
 from .manager import ConnectorsType, Manager, ManagerInterface, ManagerConfig
 from .worker import Worker
-from .connectors import ConnectorInterface, LocalConnector
+from .connector import ConnectorInterface, LocalConnector
 
 __all__ = [
     "ConnectorsType",

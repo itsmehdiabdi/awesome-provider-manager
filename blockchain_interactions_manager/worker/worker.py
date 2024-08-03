@@ -2,7 +2,7 @@ import os
 import json
 
 from ..handler import Handler, HandlerInterface
-from ..providers import Network, providers
+from ..api_service import Network, api_services
 from ..strategies import StrategyType
 from ..worker import WorkerConfig, WorkerInterface
 
@@ -31,7 +31,7 @@ class Worker(WorkerInterface):
             for network in configs:
                 self.handlers[network] = Handler(
                     [
-                        providers[network][config["type"]](config["url"])
+                        api_services[network][config["type"]](config["url"])
                         for config in configs[network]
                     ]
                 )

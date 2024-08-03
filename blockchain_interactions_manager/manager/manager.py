@@ -1,6 +1,6 @@
 from .base.interface import Manager as ManagerInterface
 from .base.type import Connectors, ManagerConfig, Requirement
-from ..providers import Network
+from ..api_service import Network
 
 
 class Manager(ManagerInterface):

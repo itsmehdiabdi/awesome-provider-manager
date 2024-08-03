@@ -1,5 +1,5 @@
-from ..connectors import ConnectorInterface
-from ..providers import Network
+from ..connector import ConnectorInterface
+from ..api_service import Network
 from ..strategies import StrategyType
 from ..worker import Worker
 

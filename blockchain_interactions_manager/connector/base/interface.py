@@ -1,7 +1,7 @@
 from abc import abstractmethod
 
 from ..base.type import Connection
-from ...providers import Network
+from ...api_service import Network
 from ...strategies import StrategyInterface
 from ...utils import Singleton
 

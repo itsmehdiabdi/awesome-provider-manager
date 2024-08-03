@@ -1,12 +1,12 @@
 from typing import List
 
 from ..handler import HandlerInterface
-from ..providers import ProviderInterface
+from ..api_service import APIService
 from ..strategies import strategies, StrategyType
 
 
 class Handler(HandlerInterface):
-    def __init__(self, providers: List[ProviderInterface]) -> None:
+    def __init__(self, providers: List[APIService]) -> None:
         self.providers = providers
 
     def get_balance(self, strategy: StrategyType, wallet_address: str) -> int:
